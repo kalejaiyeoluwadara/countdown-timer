@@ -7,7 +7,7 @@ export default function Home() {
     // #231d2b
     <main className="sm:h-screen relative  w-full flex-col bg-[#231d2b] h-screen flex items-center justify-center">
       <main className="relative z-40">
-        <h2 className="text-2xl mb-10 w-full text-center font-bold text-white ">
+        <h2 className="text-xl tracking-[0.2em] mb-10 w-full text-center font-bold text-white ">
           WE'RE LAUNCHING SOON
         </h2>
         <App />
