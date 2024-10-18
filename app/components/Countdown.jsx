@@ -34,26 +34,26 @@ const CountdownTimer = ({ targetDate }) => {
   if (!isMounted) return null;
 
   return (
-    <div className="flex space-x-4 justify-center items-center">
+    <div className="flex   sm:w-auto w-full space-x-2 sm:space-x-4 justify-center items-center">
       {Object.entries(timeLeft).map(([unit, value], index) => (
         <div
           key={index} // Added key to prevent React warning
-          className="flex flex-col gap-4 items-center justify-center"
+          className="flex  sm:w-auto w-[80px]  flex-col gap-2 sm:gap-4 items-center justify-center"
         >
-          <section className="h-[200px] flex w-[200px] bg-black rounded-xl">
-            <div className="h-[190px] overflow-x-hidden relative w-full bg-[#34364f] flex items-center justify-center rounded-xl">
-              <span className="text-[100px] translate-y-[-9px] font-bold text-[#f95d84] mt-2 uppercase">
+          <section className="sm:h-[200px] h-[100px] w-[80px] flex sm:w-[200px] bg-black rounded-md">
+            <div className="sm:h-[190px] h-[90px] overflow-hidden relative w-full bg-[#34364f] flex items-center justify-center rounded-md">
+              <span className="sm:text-[100px] text-3xl translate-y-[-9px] font-bold text-[#f95d84] mt-2 uppercase">
                 {String(value).padStart(2, "0")}
               </span>
               {/* line */}
-              <div className="w-full flex items-center justify-center absolute top-[95px]">
+              <div className="w-full flex items-center justify-center absolute sm:top-[95px] top-[45px] ">
                 <div className="h-[16px] -left-2 absolute z-50 w-[16px] bg-black rounded-full" />
                 <div className="w-full absolute bg-black rounded-xl shadow-2xl h-[1.5px]" />
                 <div className="h-[16px] -right-2 absolute w-[16px] bg-black rounded-full" />
               </div>
             </div>
           </section>
-          <p className="text-white tracking-[0.3em] uppercase text-opacity-35 font-bold">
+          <p className="text-white tracking-[0.3em] sm:text-base text-xs uppercase text-opacity-35 font-bold">
             {unit}
           </p>
         </div>
