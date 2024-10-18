@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
 import hills from "@/app/images/hills.svg";
 import stars from "@/app/images/stars.svg";
+import facebook from "@/app/images/facebook.svg";
+import pinterest from "@/app/images/pinterest.svg";
+import instagram from "@/app/images/instagram.svg";
 import App from "./components/Countdown";
 export default function Home() {
+  const images = [facebook, pinterest, instagram];
   return (
     // #231d2b
     <main className="sm:h-screen relative  w-full flex-col bg-[#231d2b] h-screen flex items-center justify-center">
@@ -12,7 +17,19 @@ export default function Home() {
         </h2>
         <App />
       </main>
-      <footer></footer>
+      <footer className="flex gap-3 w-full items-center justify-center absolute bottom-10 z-[60] ">
+        {images.map((image, id) => {
+          return (
+            <Image
+              className=" fill-black cursor-pointer "
+              height={20}
+              width={20}
+              src={image}
+              alt="social icon"
+            />
+          );
+        })}
+      </footer>
       <Image
         className="absolute top-0 w-full h-full z-10 "
         src={stars}
